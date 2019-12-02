@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+    <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,17 +8,80 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>CHARTSCHARTSCHARTS</title>
-  </head>
-  <body class="py-5">
+    <title>FIRE Calculator</title>
+
+    </head>
+    <body class="py-5">
     <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Dein Netto-Einkommen (Jahr):</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="input-einkommen" placeholder="30000">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Deine Ausgaben (Jahr):</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="input-ausgaben" placeholder="12000">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Soviel sparst Du im Jahr:</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="input-sparen" placeholder="18000">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Deine Sparquote:</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="input-sparquote" placeholder="60%">
+                        </div>
+                    </div>
+
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="justify-content: center; display: flex;">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-primary" id="button-submit" onclick="calculateFIRE()">Berechnen</button>
+                        </div>
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#optionsCollapse" role="button" aria-expanded="false" aria-controls="optionsCollapse">Erweitert <span style="clear:both" id="chevron">▾</span></a>
+                        </div>
+                    </div>
+
+                    <div class="py-3 collapse multi-collapse" id="optionsCollapse">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Aktuelles Vermögen:</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="input-vermoegen" placeholder="0€">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Jährliche Rendite:</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="input-rendite" placeholder="5%">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Entnahmerate (SWR):</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="inputswr" placeholder="4%">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
         <div class="card">
             <div class="card-body">
                 <h1>CHARTSCHARTSCHARTS</h1>
                 <canvas id="myChart"></canvas>
                 <button type="button" class="btn btn-primary" onclick="updateChart()">Update</button>
                 <button type="button" class="btn btn-secondary" onclick="berechneChart()">Berechnen</button>
-
             </div>
         </div>
 
@@ -55,11 +118,15 @@
         function berechneChart() {
             chart.update();
         }
+
+        function calculateFIRE() {
+            chart.update();
+        }
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+    </body>
 </html>
