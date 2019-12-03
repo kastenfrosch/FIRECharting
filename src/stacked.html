@@ -108,7 +108,8 @@
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(220,220,220,1)",
                 pointBorderWidth: 1,
-                data: [2, 4, 3, 12, 9, 15, 25, 5, 2, 12, 24, 1]
+                data: [2, 4, 3, 12, 9, 15, 25, 5, 2, 12, 24, 1],
+                fill: 'origin'
               }, {
                 label: "Net interests",
                 backgroundColor: "rgba(3, 88, 106, 0.3)",
@@ -118,7 +119,8 @@
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(151,187,205,1)",
                 pointBorderWidth: 1,
-                data: [3, 5, 1, 14, 5, 25, 5, 7, 4, 12, 9, 10]
+                data: [3, 5, 1, 14, 5, 25, 5, 7, 4, 12, 9, 10],
+                fill: 0
               }]
             },
             options: {
@@ -126,7 +128,7 @@
                 yAxes: [{
                   scaleLabel: {
                     display: true,
-                    labelString: 'Income in $'
+                    labelString: 'Net worth'
                   },
                     stacked: true
                 }]
@@ -166,6 +168,7 @@
             let netWorthOverTime = {year: [], netWorth: [], netSavings: [], netInterests: []};
             let netSavings = 0;
             let netInterests = 0;
+            let cur_year = new Date().getFullYear();
             let year = 0;
 
             while ((netWorth*swr) < spendings) {
@@ -173,7 +176,7 @@
                 console.log("test " + year);
 
                 // calculating starting netWorth into first year
-                if (year > 0) {
+                if (cur_year + year > cur_year) {
                     netWorth += savings;
                     netSavings += savings;
                 }
@@ -187,7 +190,7 @@
                 console.log("netWorth*swr: " + netWorth*swr);
 
                 // saving everything into list
-                netWorthOverTime.year.push(year);
+                netWorthOverTime.year.push(cur_year + year);
                 netWorthOverTime.netWorth.push(netWorth);
                 netWorthOverTime.netSavings.push(netSavings);
                 netWorthOverTime.netInterests.push(netInterests);
