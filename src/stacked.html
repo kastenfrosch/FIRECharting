@@ -182,7 +182,9 @@
                 console.log("test " + year);
 
                 // calculating starting netWorth into first year
-                if (cur_year + year > cur_year) {
+                if (year == 0) {
+                    netSavings += netWorth;
+                } else {
                     netWorth += savings;
                     netSavings += savings;
                 }
