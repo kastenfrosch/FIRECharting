@@ -137,10 +137,25 @@
         function calculateFIRE() {
 
             let savingsStr = document.getElementById("input-sparen").value;
+            if (savingsStr == "") {
+                savingsStr = "30000";
+            }
             let spendingsStr = document.getElementById("input-ausgaben").value;
+            if (spendingsStr == "") {
+                spendingsStr = "12000";
+            }
             let netWorthStr = document.getElementById("input-vermoegen").value;
+            if (netWorthStr == "") {
+                netWorthStr = "0";
+            }
             let interestRateStr = document.getElementById("input-rendite").value;
+            if (interestRateStr == "") {
+                interestRateStr = "0.05";
+            }
             let swrStr = document.getElementById("input-swr").value;
+            if (swrStr == "") {
+                swrStr = "0.04";
+            }
 
             let savings = parseFloat(savingsStr);
             let spendings = parseFloat(spendingsStr);
